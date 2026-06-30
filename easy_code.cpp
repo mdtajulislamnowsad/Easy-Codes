@@ -15,9 +15,13 @@ class Node{
 };
 
 void insert(Node* &head,int val){
-    Node* new_node = new Node(99);
-    new_node->next=head;
-    head = new_node;
+    Node* new_node = new Node(val);
+    Node* tmp = head;
+    while (tmp->next != NULL)
+    {
+        tmp=tmp->next;
+    }
+    tmp->next=new_node;    
 
 }
 
@@ -29,7 +33,7 @@ int main() {
     head->next = a;
     a->next = b;
 
-    insert(head,100);
+    insert(head,1);
 
     Node *tmp=head;
     while (tmp != NULL)
