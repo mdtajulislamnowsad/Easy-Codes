@@ -14,29 +14,31 @@ class Node{
     }
 };
 
-void insert(Node* &head,int idx,int val){
+void insert(Node* &head,Node* &tail,int val){
     Node* new_node = new Node(val);
 
-    Node* tmp = head;
-    for (int i = 1; i < idx; i++)
-    {
-        tmp=tmp->next;
+    if(head == NULL){
+        head = new_node;
+        return;
     }
-    new_node->next=tmp->next;
-    tmp->next = new_node;
+
+    tail->next=new_node;
+    tail =new_node;
+    
 }
 
 int main() {
     Node* head = new Node(10);
     Node* a = new Node(20);
     Node* b = new Node(30);
+    Node* tail = new Node(40);
 
     head->next = a;
     a->next = b;
+    b->next=tail;
 
-    insert(head,1,100);
-    insert(head,2,200);
-    insert(head,3,300);    
+    insert(head,tail,100);  
+    insert(head,tail,200);  
 
     Node *tmp=head;
     while (tmp != NULL)
@@ -44,6 +46,6 @@ int main() {
         cout<<tmp->val<<endl;
         tmp=tmp->next;
     }     
-        
+
     return 0;
 }
