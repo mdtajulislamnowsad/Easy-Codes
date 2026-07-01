@@ -13,12 +13,10 @@ public:
 
 void insert(Node* &head, int val) {
     Node* newNode = new Node(val);
-    
     if (head == NULL) {
         head = newNode;
         return;
     }
-    
     Node* temp = head;
     while (temp->next != NULL) {
         temp = temp->next;
@@ -26,23 +24,18 @@ void insert(Node* &head, int val) {
     temp->next = newNode;
 }
 
-void print(Node* head) {
-    Node* temp = head;
-    while (temp != NULL) {
-        cout << temp->val << " ";
-        temp = temp->next;
-    }
-    cout << endl;
+void print_reverse(Node* head) {
+    if (head == NULL) return;
+    print_reverse(head->next);
+    cout << head->val << " ";
 }
 
 int main() {
     Node* head = NULL;
     int val;
-    
     while (cin >> val && val != -1) {
         insert(head, val);
     }
-    
-    print(head);
+    print_reverse(head);
     return 0;
 }
