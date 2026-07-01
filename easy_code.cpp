@@ -1,51 +1,48 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class Node{
-
-    public:
-        int val;
-        Node *next;
-
-    Node(int val){
+class Node {
+public:
+    int val;
+    Node* next;
+    Node(int val) {
         this->val = val;
         this->next = NULL;
-
     }
 };
 
-void insert(Node* &head,Node* &tail,int val){
-    Node* new_node = new Node(val);
-
-    if(head == NULL){
-        head = new_node;
+void insert(Node* &head, int val) {
+    Node* newNode = new Node(val);
+    
+    if (head == NULL) {
+        head = newNode;
         return;
     }
-
-    tail->next=new_node;
-    tail =new_node;
     
+    Node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
+void print(Node* head) {
+    Node* temp = head;
+    while (temp != NULL) {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+    cout << endl;
 }
 
 int main() {
-    Node* head = new Node(10);
-    Node* a = new Node(20);
-    Node* b = new Node(30);
-    Node* tail = new Node(40);
-
-    head->next = a;
-    a->next = b;
-    b->next=tail;
-
-    insert(head,tail,100);  
-    insert(head,tail,200);  
-
-    Node *tmp=head;
-    while (tmp != NULL)
-    {
-        cout<<tmp->val<<endl;
-        tmp=tmp->next;
-    }     
-
+    Node* head = NULL;
+    int val;
+    
+    while (cin >> val && val != -1) {
+        insert(head, val);
+    }
+    
+    print(head);
     return 0;
 }
