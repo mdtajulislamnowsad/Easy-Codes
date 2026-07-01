@@ -24,10 +24,12 @@ void insert(Node* &head, int val) {
     temp->next = newNode;
 }
 
-void print_reverse(Node* head) {
-    if (head == NULL) return;
-    print_reverse(head->next);
-    cout << head->val << " ";
+void print_forward(Node* head) {
+    Node* temp = head;
+    while (temp != NULL) {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
 }
 
 int main() {
@@ -36,6 +38,6 @@ int main() {
     while (cin >> val && val != -1) {
         insert(head, val);
     }
-    print_reverse(head);
+    print_forward(head);
     return 0;
 }
