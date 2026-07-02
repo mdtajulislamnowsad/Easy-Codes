@@ -28,6 +28,14 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
+void reverse(Node* tmp){
+    if(tmp == NULL){
+        return;
+    }
+    reverse(tmp->next);
+    cout << tmp->val <<" " ;
+}
+
 int main() {
     Node* head = NULL;
     Node* tail = NULL;
@@ -42,12 +50,7 @@ int main() {
         insert(head,tail,val);
     }    
 
-    Node *tmp=head;
-    while (tmp != NULL)
-    {
-        cout<<tmp->val<<endl;
-        tmp=tmp->next;
-    }     
+    reverse(head);    
 
     return 0;
 }
