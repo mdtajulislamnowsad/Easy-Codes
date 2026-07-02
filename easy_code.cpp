@@ -28,12 +28,11 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-void reverse(Node* tmp){
-    if(tmp == NULL){
-        return;
-    }
-    reverse(tmp->next);
-    cout << tmp->val <<" " ;
+
+void deletenode(Node *&head){
+    Node *Delete = head;
+    head = head->next;
+    delete Delete;
 }
 
 int main() {
@@ -50,7 +49,15 @@ int main() {
         insert(head,tail,val);
     }    
 
-    reverse(head);    
+    deletenode(head);
+
+    Node *tmp=head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp=tmp->next;
+    }
+    
 
     return 0;
 }
