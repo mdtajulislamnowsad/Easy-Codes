@@ -19,6 +19,7 @@ void insert(Node* &head,Node* &tail,int val){
 
     if(head == NULL){
         head = new_node;
+        tail = new_node;
         return;
     }
 
@@ -28,17 +29,18 @@ void insert(Node* &head,Node* &tail,int val){
 }
 
 int main() {
-    Node* head = new Node(10);
-    Node* a = new Node(20);
-    Node* b = new Node(30);
-    Node* tail = new Node(40);
+    Node* head = NULL;
+    Node* tail = NULL;
 
-    head->next = a;
-    a->next = b;
-    b->next=tail;
-
-    insert(head,tail,100);  
-    insert(head,tail,200);  
+    int val;
+    while (true)
+    {
+        cin >> val;
+        if(val == -1){
+            break;
+        }
+        insert(head,tail,val);
+    }    
 
     Node *tmp=head;
     while (tmp != NULL)
