@@ -28,18 +28,18 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-void delete_any_position(Node* &head,Node* &tail,int val){
 
-    Node* tmp=head;
-    for (int i = 1; i < val; i++)
+void sorting(Node* head){
+    for (Node* i=head; i->next!= NULL;i=i->next)
     {
-        tmp =tmp->next;
+        for (Node* j=i->next; j != NULL;j=j->next)
+        {
+            if(i->val > j->val){
+                swap(i->val,j->val);
+            }
+        }
     }
-    Node* dlt= tmp->next;
-
-    tmp->next=tmp->next->next;
-    delete dlt;
-    tail = tmp;
+    
 }
 
 int main() {
