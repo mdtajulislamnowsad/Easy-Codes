@@ -28,7 +28,7 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-void delete_any_position(Node* &head,int val){
+void delete_any_position(Node* &head,Node* &tail,int val){
 
     Node* tmp=head;
     for (int i = 1; i < val; i++)
@@ -38,8 +38,8 @@ void delete_any_position(Node* &head,int val){
     Node* dlt= tmp->next;
 
     tmp->next=tmp->next->next;
-
     delete dlt;
+    tail = tmp;
 }
 
 int main() {
@@ -56,8 +56,8 @@ int main() {
         insert(head,tail,val);
     }    
 
-    delete_any_position(head,3);
-    
+    delete_any_position(head,tail,5);
+
     Node *tmp=head;
     while (tmp != NULL)
     {
