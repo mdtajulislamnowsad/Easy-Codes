@@ -27,62 +27,89 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-int check_equal(Node* head,Node* head2){
-    Node* tmp = head;
-    Node* tmp2 = head2;
-
-    while (tmp != NULL && tmp2 != NULL)
-    {
-        if(tmp->val != tmp2->val){
-            return 0;
-        }
-        tmp = tmp->next;
-        tmp2 = tmp2->next;        
+void insert_head(Node* &head, Node* &tail, int val) {
+    Node* newNode = new Node(val);
+    if (head == NULL) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->next = head;
+        head = newNode;
     }
-
-    if(tmp == NULL && tmp2 == NULL){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-    
 }
 
+void insert_tail(Node* &head, Node* &tail, int val) {
+    Node* newNode = new Node(val);
+    if (head == NULL) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
+
+void delete_at_any_pos(Node* &head,Node* &tail, int idx) {
+    if(head == NULL){
+        return;
+    }
+
+    if (idx == 0) { 
+        Node* delnode = head;
+        head = head->next;
+        if (head == NULL) tail = NULL;
+        delete delnode;
+        return;
+    }
+
+    Node* tmp = head;
+    for (int i = 0; i < idx - 1; i++) {
+        if (tmp == NULL || tmp->next == NULL) return; 
+        tmp = tmp->next;
+    }
+
+    if (tmp->next != NULL) {
+        Node* delnode = tmp->next;
+        tmp->next = tmp->next->next;
+        if (tmp->next == NULL) tail = tmp; 
+        delete delnode;
+    }
+}
+
+
 int main() {
-        
+
+    int t;
+    cin >> t;
+    
     Node* head = NULL;
     Node* tail = NULL;
 
-    Node* head2 = NULL;
-    Node* tail2 = NULL;
-
-    int val;
-    while (true)
+    for (int i = 0; i < t; i++)
     {
-        cin >> val;
-        if(val == -1){
-            break;
-        }
-        insert(head,tail,val);
-    }
+    int x,y;
+    cin >> x >> y;
 
-    while (true)
-    {
-        cin >> val;
-        if(val == -1){
-            break;
-        }
-        insert(head2,tail2,val);
-    }
-
-    int ans = check_equal(head, head2);
     
-    if(ans == 0){
-        cout << "NO";
+    if (x == 0) {
+            insert_head(head, tail, y);
+        } 
+        else if (x == 1) {
+            insert_tail(head, tail, y);
+        } 
+        else if (x == 2) {
+            delete_at_any_pos(head, tail, y);
+        }
+
+        Node* temp = head;
+        while (temp != NULL) {
+            cout << temp->val << " ";
+            temp = temp->next;
+        }
+        cout << endl;   
+    
     }
-    else{
-        cout <<"YES";
-    }
+
+    
     return 0;
 }
