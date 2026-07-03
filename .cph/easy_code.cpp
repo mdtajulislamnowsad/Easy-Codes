@@ -27,29 +27,35 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-int search(Node* head,int n) {
-    int count = 0; 
-    int min_val = head->val;
-    Node* temp = head;
-    while (temp != NULL) {
-        if (temp->val == n) {
-            return count;
-            break;
+int check_equal(Node* head,Node* head2){
+    Node* tmp = head;
+    Node* tmp2 = head2;
+
+    while (tmp != NULL && tmp2 != NULL)
+    {
+        if(tmp->val != tmp2->val){
+            return 0;
         }
-        temp = temp->next;
-        count++;
+        tmp = tmp->next;
+        tmp2 = tmp2->next;        
     }
-    return -1;
+
+    if(tmp == NULL && tmp2 == NULL){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
 }
 
 int main() {
-    int t;
-    cin >> t;
-    for (int i = 0; i < t; i++)
-    {   
-    
+        
     Node* head = NULL;
     Node* tail = NULL;
+
+    Node* head2 = NULL;
+    Node* tail2 = NULL;
 
     int val;
     while (true)
@@ -60,14 +66,23 @@ int main() {
         }
         insert(head,tail,val);
     }
-    
-    int n;
-    cin >>n;
 
-    int ans = search(head,n);
-    
-    cout << ans << endl;
+    while (true)
+    {
+        cin >> val;
+        if(val == -1){
+            break;
+        }
+        insert(head2,tail2,val);
+    }
 
-    } 
+    int ans = check_equal(head, head2);
+    
+    if(ans == 0){
+        cout << "NO";
+    }
+    else{
+        cout <<"YES";
+    }
     return 0;
 }
