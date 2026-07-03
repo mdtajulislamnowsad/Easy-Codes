@@ -4,16 +4,27 @@ using namespace std;
 class Node{
 
     public:
+<<<<<<< HEAD
     int val;
     Node *next;
 
     Node(int val){
         this->val =val;
         this->next=NULL;
+=======
+        int val;
+        Node *next;
+
+    Node(int val){
+        this->val = val;
+        this->next = NULL;
+
+>>>>>>> 3ffb98ca6af6d90dc6fd4b9caef774cc6d53189d
     }
 };
 
 void insert(Node* &head,Node* &tail,int val){
+<<<<<<< HEAD
 
     Node* newnode=new Node(val);
     if(head == NULL){
@@ -49,6 +60,33 @@ int find_max(Node* head) {
         temp = temp->next;
     }
     return max_val;
+=======
+    Node* new_node = new Node(val);
+
+    if(head == NULL){
+        head = new_node;
+        tail = new_node;
+        return;
+    }
+
+    tail->next=new_node;
+    tail =new_node;
+    
+}
+
+
+void sorting(Node* head){
+    for (Node* i=head; i->next!= NULL;i=i->next)
+    {
+        for (Node* j=i->next; j != NULL;j=j->next)
+        {
+            if(i->val > j->val){
+                swap(i->val,j->val);
+            }
+        }
+    }
+    
+>>>>>>> 3ffb98ca6af6d90dc6fd4b9caef774cc6d53189d
 }
 
 int main() {
@@ -64,6 +102,7 @@ int main() {
             break;
         }
         insert(head,tail,val);
+<<<<<<< HEAD
     }
 
     int min_val = find_min(head);
@@ -71,5 +110,19 @@ int main() {
     
     cout << max_val - min_val << endl;
     
+=======
+    }    
+
+    delete_any_position(head,tail,5);
+
+    Node *tmp=head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp=tmp->next;
+    }
+    
+
+>>>>>>> 3ffb98ca6af6d90dc6fd4b9caef774cc6d53189d
     return 0;
 }
