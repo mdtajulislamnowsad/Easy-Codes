@@ -27,89 +27,47 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-void insert_head(Node* &head, Node* &tail, int val) {
-    Node* newNode = new Node(val);
-    if (head == NULL) {
-        head = newNode;
-        tail = newNode;
-    } else {
-        newNode->next = head;
-        head = newNode;
+void remove(Node* head) {
+    Node* newnode = head;
+    while (newnode != NULL) {
+        Node* tmp = newnode;
+        while (tmp->next != NULL) {
+            if (tmp->next->val == newnode->val) {
+                Node* deletenode = tmp->next;
+                tmp->next = tmp->next->next;
+                delete deletenode;
+            } else {
+                tmp = tmp->next;
+            }
+        }
+        newnode = newnode->next;
     }
 }
-
-void insert_tail(Node* &head, Node* &tail, int val) {
-    Node* newNode = new Node(val);
-    if (head == NULL) {
-        head = newNode;
-        tail = newNode;
-    } else {
-        tail->next = newNode;
-        tail = newNode;
-    }
-}
-
-void delete_at_any_pos(Node* &head,Node* &tail, int idx) {
-    if(head == NULL){
-        return;
-    }
-
-    if (idx == 0) { 
-        Node* delnode = head;
-        head = head->next;
-        if (head == NULL) tail = NULL;
-        delete delnode;
-        return;
-    }
-
-    Node* tmp = head;
-    for (int i = 0; i < idx - 1; i++) {
-        if (tmp == NULL || tmp->next == NULL) return; 
-        tmp = tmp->next;
-    }
-
-    if (tmp->next != NULL) {
-        Node* delnode = tmp->next;
-        tmp->next = tmp->next->next;
-        if (tmp->next == NULL) tail = tmp; 
-        delete delnode;
-    }
-}
-
 
 int main() {
-
-    int t;
-    cin >> t;
-    
+        
     Node* head = NULL;
     Node* tail = NULL;
 
-    for (int i = 0; i < t; i++)
+    int val;
+    while (true)
     {
-    int x,y;
-    cin >> x >> y;
-
-    
-    if (x == 0) {
-            insert_head(head, tail, y);
-        } 
-        else if (x == 1) {
-            insert_tail(head, tail, y);
-        } 
-        else if (x == 2) {
-            delete_at_any_pos(head, tail, y);
+        cin >> val;
+        if(val == -1){
+            break;
         }
-
-        Node* temp = head;
-        while (temp != NULL) {
-            cout << temp->val << " ";
-            temp = temp->next;
-        }
-        cout << endl;   
-    
+        insert(head,tail,val);
     }
 
+    remove(head);
+
+    Node* tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp=tmp->next;
+    }
     
+   
     return 0;
 }
