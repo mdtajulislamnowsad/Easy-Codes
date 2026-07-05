@@ -1,1 +1,0 @@
-{"name":"Local: Easy_Code","url":"c:\\nowsad\\Code\\Easy-Codes\\Easy_Code.cpp","tests":[{"id":1782727616254,"input":"5 1 4 5 -1\n5 1 4 -1\n","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\Easy_Code.cpp","group":"local","local":true}
