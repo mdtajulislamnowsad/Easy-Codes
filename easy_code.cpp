@@ -23,7 +23,11 @@ class Node{
     }
 };
 
+
 void insert(Node* &head,Node* &tail,int val){
+<<<<<<< HEAD
+    Node* newnode = new Node(val);
+=======
 <<<<<<< HEAD
 
     Node* newnode=new Node(val);
@@ -62,37 +66,41 @@ int find_max(Node* head) {
     return max_val;
 =======
     Node* new_node = new Node(val);
+>>>>>>> 9faf75f63e49c1b88175c6ecafcb95e22871e7ff
 
     if(head == NULL){
-        head = new_node;
-        tail = new_node;
-        return;
+        head = newnode;
+        tail = newnode;
     }
-
-    tail->next=new_node;
-    tail =new_node;
-    
+    tail->next=newnode;
+    tail = newnode;
 }
 
 
-void sorting(Node* head){
-    for (Node* i=head; i->next!= NULL;i=i->next)
+int size(Node* head,Node* tail){
+    int count=0;
+    Node* tmp =head;
+    while (tmp != NULL)
     {
-        for (Node* j=i->next; j != NULL;j=j->next)
-        {
-            if(i->val > j->val){
-                swap(i->val,j->val);
-            }
-        }
+        count++;
+        tmp=tmp->next;
     }
+<<<<<<< HEAD
+    return count;
+=======
     
 >>>>>>> 3ffb98ca6af6d90dc6fd4b9caef774cc6d53189d
+>>>>>>> 9faf75f63e49c1b88175c6ecafcb95e22871e7ff
 }
+
+
 
 int main() {
     
     Node* head = NULL;
     Node* tail = NULL;
+    Node* head2 = NULL;
+    Node* tail2 = NULL;
 
     int val;
     while (true)
@@ -102,6 +110,8 @@ int main() {
             break;
         }
         insert(head,tail,val);
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
     }
 
@@ -120,9 +130,30 @@ int main() {
     {
         cout << tmp->val << " ";
         tmp=tmp->next;
+>>>>>>> 9faf75f63e49c1b88175c6ecafcb95e22871e7ff
     }
-    
 
+<<<<<<< HEAD
+  
+    while (true)
+    {
+        cin >> val;
+        if(val == -1){
+            break;
+        }
+        insert(head2,tail2,val);
+    }
+   
+    if(size(head,tail) == size(head2,tail2)){
+        cout << "YES";
+    }
+    else{
+        cout << "NO";
+    }
+  
+    
+=======
 >>>>>>> 3ffb98ca6af6d90dc6fd4b9caef774cc6d53189d
+>>>>>>> 9faf75f63e49c1b88175c6ecafcb95e22871e7ff
     return 0;
 }
