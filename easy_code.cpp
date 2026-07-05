@@ -14,37 +14,38 @@ class Node{
     }
 };
 
+
 void insert(Node* &head,Node* &tail,int val){
-    Node* new_node = new Node(val);
+    Node* newnode = new Node(val);
 
     if(head == NULL){
-        head = new_node;
-        tail = new_node;
-        return;
+        head = newnode;
+        tail = newnode;
     }
-
-    tail->next=new_node;
-    tail =new_node;
-    
+    tail->next=newnode;
+    tail = newnode;
 }
 
 
-void sorting(Node* head){
-    for (Node* i=head; i->next!= NULL;i=i->next)
+int size(Node* head,Node* tail){
+    int count=0;
+    Node* tmp =head;
+    while (tmp != NULL)
     {
-        for (Node* j=i->next; j != NULL;j=j->next)
-        {
-            if(i->val > j->val){
-                swap(i->val,j->val);
-            }
-        }
+        count++;
+        tmp=tmp->next;
     }
-    
+    return count;
 }
+
+
 
 int main() {
+    
     Node* head = NULL;
     Node* tail = NULL;
+    Node* head2 = NULL;
+    Node* tail2 = NULL;
 
     int val;
     while (true)
@@ -54,17 +55,25 @@ int main() {
             break;
         }
         insert(head,tail,val);
-    }    
-
-    delete_any_position(head,tail,5);
-
-    Node *tmp=head;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp=tmp->next;
     }
-    
 
+  
+    while (true)
+    {
+        cin >> val;
+        if(val == -1){
+            break;
+        }
+        insert(head2,tail2,val);
+    }
+   
+    if(size(head,tail) == size(head2,tail2)){
+        cout << "YES";
+    }
+    else{
+        cout << "NO";
+    }
+  
+    
     return 0;
 }
