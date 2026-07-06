@@ -27,22 +27,7 @@ void insert(Node* &head,Node* &tail,int val){
     
 }
 
-void remove(Node* head) {
-    Node* newnode = head;
-    while (newnode != NULL) {
-        Node* tmp = newnode;
-        while (tmp->next != NULL) {
-            if (tmp->next->val == newnode->val) {
-                Node* deletenode = tmp->next;
-                tmp->next = tmp->next->next;
-                delete deletenode;
-            } else {
-                tmp = tmp->next;
-            }
-        }
-        newnode = newnode->next;
-    }
-}
+
 
 int main() {
         
@@ -59,7 +44,6 @@ int main() {
         insert(head,tail,val);
     }
 
-    remove(head);
 
     Node* tmp = head;
     while (tmp != NULL)

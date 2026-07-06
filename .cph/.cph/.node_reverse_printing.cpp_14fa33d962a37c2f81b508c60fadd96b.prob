@@ -1,0 +1,1 @@
+{"name":"Local: node_reverse_printing","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\node_reverse_printing.cpp","tests":[{"id":1783250054107,"input":"1 2 3 4 -1\n\n","output":"4 3 2 1\n\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\node_reverse_printing.cpp","group":"local","local":true}
