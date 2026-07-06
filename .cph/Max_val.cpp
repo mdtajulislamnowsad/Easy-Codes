@@ -4,61 +4,85 @@ using namespace std;
 class Node{
 
     public:
-    int val;
-    Node *next;
+        int val;
+        Node *next;
 
     Node(int val){
-        this->val =val;
-        this->next=NULL;
+        this->val = val;
+        this->next = NULL;
+
     }
 };
 
-void insert(Node* &head,Node* &tail,int val){
+void insert(Node* &head,Node* &tail,int jar){
 
-    Node* newnode=new Node(val);
+    Node* newnode = new Node(jar);
     if(head == NULL){
         head = newnode;
         tail = newnode;
+        return;
     }
-    else{
-        tail->next=newnode;
-        tail = newnode;
-    }
-    
+
+    tail->next=newnode;
+    tail=newnode;
 }
 
-void Max_val(Node* head){
-    int Max = 0;     
-    Node* tmp = head;     
-    while (tmp != NULL)
-    {
-        if(tmp->val > Max){
-            Max = tmp->val;
-        }
-        tmp = tmp->next;
-    }
 
-    cout << Max ;
+void sorting(Node* &head){
+    for (Node* i= head; i->next != NULL; i = i->next)
+    {
+        for (Node* j = i->next; j != NULL; j=j->next)
+        {
+            if(i->val < j->val){
+                swap(i->val,j->val);
+            }
+        }
+        
+    }
     
 }
 
 
 int main() {
-        
-    Node* head = NULL;
-    Node* tail = NULL;
 
-    int val;
-    while (true)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> val;
-        if(val == -1){
-            break;
+        Node* head = NULL;
+        Node* tail = NULL;
+
+        int jar,kid;
+        cin >> jar >> kid;
+
+        int val;
+        Node* tmp= head;
+
+        int count = jar;
+        while (count--)
+        {
+            cin >> val;
+            insert(head,tail,val);
         }
-        insert(head,tail,val);
-    }
-    
-    Max_val(head);
-   
+
+        sorting(head);
+        
+        int ans =0;
+
+        count = jar;
+        Node* temp=head;
+        while (count--)
+        {
+            if(temp->val % kid == 0){
+                ans = temp->val;
+                break;
+            }
+            else{
+                temp = temp->next;
+            }
+        }
+        cout << ans << endl;
+    }   
+
     return 0;
 }
