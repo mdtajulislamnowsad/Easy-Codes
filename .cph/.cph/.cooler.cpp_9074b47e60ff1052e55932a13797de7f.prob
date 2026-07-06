@@ -1,0 +1,1 @@
+{"name":"Local: cooler","url":"c:\\Users\\User\\OneDrive\\Desktop\\Code\\Easy-Codes\\.cph\\cooler.cpp","tests":[{"id":1783353657216,"input":"3\n10 9\n40 38\n40 0","output":"10\n79\n820"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\User\\OneDrive\\Desktop\\Code\\Easy-Codes\\.cph\\cooler.cpp","group":"local","local":true}
