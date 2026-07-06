@@ -28,12 +28,19 @@ void insert(Node* &head,Node* &tail,int val){
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a19f806423f0243eade2318c21a7395b2e3b3ab8
 int main() {
         
     Node* head = NULL;
     Node* tail = NULL;
+<<<<<<< HEAD
 
     int count = 0;
+=======
+>>>>>>> a19f806423f0243eade2318c21a7395b2e3b3ab8
 
     int val;
     while (true)
@@ -43,6 +50,7 @@ int main() {
             break;
         }
         insert(head,tail,val);
+<<<<<<< HEAD
         count++;
     }
 
@@ -82,6 +90,18 @@ int main() {
 
 
     
+=======
+    }
+
+
+    Node* tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp=tmp->next;
+    }
+    
+>>>>>>> a19f806423f0243eade2318c21a7395b2e3b3ab8
    
     return 0;
 }

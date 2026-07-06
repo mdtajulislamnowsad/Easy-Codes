@@ -1,0 +1,1 @@
+{"name":"Local: Max_val","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\Max_val.cpp","tests":[{"id":1783252385050,"input":"4\n4 1\n2 3 5 7\n4 3\n2 3 5 7\n4 3\n3 9 11 6\n4 4\n3 9 11 6","output":"7\n3\n9\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\Max_val.cpp","group":"local","local":true}
