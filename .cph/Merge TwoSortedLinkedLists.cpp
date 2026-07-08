@@ -70,7 +70,6 @@ int main() {
         tail->next = head2;
     }
 
-    sorting(head);
     print_list(head);
 
     return 0;
