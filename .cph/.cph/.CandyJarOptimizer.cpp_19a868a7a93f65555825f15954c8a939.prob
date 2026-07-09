@@ -1,0 +1,1 @@
+{"name":"Local: CandyJarOptimizer","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\CandyJarOptimizer.cpp","tests":[{"id":1783415347840,"input":"3\n10 9\n40 38\n40 0","output":"10\n79\n820"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\CandyJarOptimizer.cpp","group":"local","local":true}
