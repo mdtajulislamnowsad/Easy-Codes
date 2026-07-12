@@ -12,6 +12,7 @@ public:
     }
 };
 
+
 void insert(Node* &head, Node* &tail, int val) {
     Node* newnode = new Node(val);
     if (head == NULL) {
