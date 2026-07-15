@@ -15,6 +15,17 @@ class Node{
     }
 };
 
+void print_forward(Node* head){
+    Node* tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    
+
+}
+
 int main() {
     
     Node* head = new Node(10);
@@ -27,6 +38,6 @@ int main() {
     a->next= tail;
     tail->prv=a;
 
-    
+    print_forward(head);
     return 0;
 }
