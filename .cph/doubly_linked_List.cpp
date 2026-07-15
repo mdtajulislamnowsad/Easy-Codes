@@ -15,12 +15,12 @@ class Node{
     }
 };
 
-void print_forward(Node* head){
-    Node* tmp = head;
+void print_backward(Node* tail){
+    Node* tmp = tail;
     while (tmp != NULL)
     {
         cout << tmp->val << " ";
-        tmp = tmp->next;
+        tmp = tmp->prv;
     }
     
 
@@ -38,6 +38,6 @@ int main() {
     a->next= tail;
     tail->prv=a;
 
-    print_forward(head);
+    print_backward(tail);
     return 0;
 }
