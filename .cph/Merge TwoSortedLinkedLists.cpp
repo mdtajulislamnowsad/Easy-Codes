@@ -12,6 +12,7 @@ public:
     }
 };
 
+
 void insert(Node* &head, Node* &tail, int val) {
     Node* newnode = new Node(val);
     if (head == NULL) {
@@ -70,6 +71,7 @@ int main() {
         tail->next = head2;
     }
 
+    
     sorting(head);
     print_list(head);
 
