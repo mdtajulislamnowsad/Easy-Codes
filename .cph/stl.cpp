@@ -3,10 +3,11 @@ using namespace std;
 
 int main() {
     
-    list<int> l(10,8);
-    for (auto i = l.begin(); i != l.end(); i++)
+    list<int> l = {10,20,30,40,50,10};
+    l.remove(10);
+    for ( int val : l)
     {
-        cout<<*l.begin()<<endl;
+        cout<< val <<" ";
     }
     
     return 0;
