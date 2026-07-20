@@ -1,53 +1,23 @@
 class Solution {
 public:
-
-    void insert_at_tail(ListNode* &head,ListNode* &tail,int val){
-
-        ListNode* newnode = new ListNode (val);
-        if(head == NULL){
-            head = newnode;
-            tail = newnode;
-            return;
-        }
-        tail->next = newnode;
-        tail = newnode;
-    }
-
-    void reverse(ListNode* &head,ListNode* tmp){
-
-        if(tmp->next == NULL){
-            head = tmp;
-            return;
-        }
-        reverse(head,tmp->next);
-        tmp->next->next = tmp;
-        tmp->next = NULL;
-    }   
+   
 
     bool isPalindrome(ListNode* head) {
 
-        ListNode* newhead = NULL;
-        ListNode* newtail = NULL;
+        vector<int>v;
 
         ListNode* tmp = head;
         while(tmp != NULL){
-            insert_at_tail(newhead, newtail, tmp->val);
+            v.push_back(tmp->val);
             tmp= tmp->next;
         }
         
-        reverse(newhead,newhead);
+        vector<int>x;
 
-        tmp = head;
-        ListNode* tmp2 = newhead;
-        while(tmp != NULL){
+        x = v;
+        reverse(x.begin(),x.end());
 
-            if(tmp->val != tmp2->val){
-                return false;                
-            }
+        return (x == v ? true : false);
 
-            tmp = tmp->next;
-            tmp2 = tmp2->next;
-        }
-        return true;
     }
 };
