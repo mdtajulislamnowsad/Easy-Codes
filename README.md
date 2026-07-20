@@ -7,6 +7,7 @@ My coding journey starts here — practice codes, exercises, and small projects.
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/mdtajulislamnowsad/Easy-Codes/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0083-remove-duplicates-from-sorted-list](https://github.com/mdtajulislamnowsad/Easy-Codes/tree/master/0083-remove-duplicates-from-sorted-list) |
 | [0141-linked-list-cycle](https://github.com/mdtajulislamnowsad/Easy-Codes/tree/master/0141-linked-list-cycle) |
 | [0876-middle-of-the-linked-list](https://github.com/mdtajulislamnowsad/Easy-Codes/tree/master/0876-middle-of-the-linked-list) |
 ## Two Pointers
