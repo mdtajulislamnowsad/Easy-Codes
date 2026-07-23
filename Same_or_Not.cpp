@@ -21,9 +21,15 @@ int main() {
         qt.push(x);
     }
 
+    if (s != q) {
+        cout << "NO" << endl;
+        return 0;
+    }
+
     int triger = 1;
 
-    while(!st.empty() || !qt.empty()){
+
+    while(!st.empty() && !qt.empty()){
         if(st.top() != qt.front()){
             triger = 0;
             break;
