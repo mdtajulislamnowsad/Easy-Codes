@@ -15,8 +15,8 @@ class Node{
     }
 };
 
-int size(Node* head)
-{
+int size(Node* head){
+    
     int count = 0;
     Node* tmp = head;
 
@@ -29,12 +29,12 @@ int size(Node* head)
     return count;
 }
 
-void insert_at_head(Node* &head, Node* &tail, int val)
-{
+void insert_at_head(Node* &head, Node* &tail, int val){
+    
     Node* newNode = new Node(val);
 
-    if(head == NULL)
-    {
+    if(head == NULL){
+
         head = tail = newNode;
         return;
     }
@@ -60,8 +60,8 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
 void insert_any(Node* &head,int idx, int val){
 
     Node* tmp = head;
-    for(int i=0;i<idx-1;i++)
-    {
+    for(int i=0;i<idx-1;i++){
+        
         tmp = tmp->next;
     }
 
@@ -114,22 +114,22 @@ int main() {
 
     int sz = size(head);
 
-    if(idx>sz)
-    {
+    if(idx>sz){
+
         cout<<"Invalid"<<endl;
     }
     else
 {
-    if(idx == 0)
-    {
+    if(idx == 0){
+
         insert_at_head(head, tail, val);
     }
-    else if(idx == sz)
-    {
+    else if(idx == sz){
+
         insert_at_tail(head, tail, val);
     }
-    else
-    {
+    else{
+
         insert_any(head, idx, val);
     }
 
