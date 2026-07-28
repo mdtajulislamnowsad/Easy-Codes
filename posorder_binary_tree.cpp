@@ -41,6 +41,7 @@ int main() {
     a->left = c;
     b->left = d;
     b->right = e;
+    
 
     posorder(root);
     return 0;
