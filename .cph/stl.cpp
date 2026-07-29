@@ -7,11 +7,14 @@ int main() {
     // l.remove(10);
     l.sort();
     l.unique();
+    l.reverse();
 
     for ( int val : l)
     {
         cout<< val <<" ";
     }
+    
+    cout <<l.front() ;
     
     return 0;
 }

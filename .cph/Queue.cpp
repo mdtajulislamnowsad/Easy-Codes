@@ -77,7 +77,12 @@ int main() {
         q.push(x);
     }
     
-    cout << q.front() <<" "<<q.back()<<" "<<q.size() ;
+    while (!q.empty())
+    {
+        cout << q.front() << " ";
+        q.pop();
+    }
+    
     
     return 0;
 }

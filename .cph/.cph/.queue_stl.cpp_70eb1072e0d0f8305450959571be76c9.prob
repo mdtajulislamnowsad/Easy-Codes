@@ -1,0 +1,1 @@
+{"name":"Local: queue_stl","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\queue_stl.cpp","tests":[{"id":1784701657963,"input":"10\n1 2 3 4 5 6 7 8 9 10","output":"1 2 3 4 5 6 7 8 9 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\queue_stl.cpp","group":"local","local":true}
