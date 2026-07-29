@@ -1,0 +1,1 @@
+{"name":"Local: STL_Queue_builtin","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\STL\\STL_Queue_builtin.cpp","tests":[{"id":1784702051625,"input":"5\n20 90 40 50 320","output":"20 90 40 50 320"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\STL\\STL_Queue_builtin.cpp","group":"local","local":true}

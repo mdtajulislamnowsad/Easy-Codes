@@ -1,0 +1,1 @@
+{"name":"Local: queue_doubly","url":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\queue_doubly.cpp","tests":[{"id":1784701159029,"input":"5\n10 20 30 40 50","output":"10 20 30 40 50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\nowsad\\Code\\Easy-Codes\\.cph\\queue_doubly.cpp","group":"local","local":true}
