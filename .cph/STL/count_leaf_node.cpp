@@ -58,8 +58,6 @@ Node* input(){
             q.push(f->left);
         if(f->right)
             q.push(f->right);
-
-        
     }
 
     return root;
