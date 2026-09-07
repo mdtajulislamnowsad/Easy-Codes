@@ -1,36 +1,52 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> adj_list[1005];
-bool vis[1005];
+char grid[105][105]; 
+bool vis [105][105];
+vector<pair<int,int>> mv = {{-1,0},{1,0},{0,-1},{0,1}};
+int n,e;
 
-void dfs(int src){
+bool valid(int i,int j){
+    if(i<0 || i >= n || j<0 || j>=e)
+        return false;
+    return true;
 
-    cout << src << " ";
-    vis[src] = true;
-    for (int child :adj_list[src])
+}
+
+
+void dfs(int si,int sj){
+
+    cout<<si <<" "<<sj <<endl;
+
+    vis[si][sj] = true;
+
+    for (int i = 0; i < 4; i++)
     {
-        if(!vis[child])
-            dfs(child);
+        int ci,cj;
+        ci =si + mv[i].first;
+        cj =sj + mv[i].second;
+        if(!vis[ci][cj] && valid(ci,cj))
+            dfs(ci,cj);
     }
     
 }
 
 int main() {
-    int n,e;
+    
     cin >> n >> e;
 
-    while (e--)
+    for (int i = 0; i < n; i++)
     {
-        int a,b;
-        cin >> a >>b;
-
-        adj_list[a].push_back(b);        
-        adj_list[b].push_back(a);        
+        for (int j = 0; j < e; j++)
+        {
+            cin >> grid[i][j];
+        }
+        
     }
-    memset(vis,false,sizeof(vis));
 
-    dfs(0);
-    
-    
+    int si,sj;
+    cin >> si >> sj;
+
+    memset(vis,false,sizeof(vis));
+    dfs(si,sj);
     return 0;
 }
